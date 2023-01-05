@@ -1,0 +1,75 @@
+<div class="modal" id="edit-modal">
+    <form class="box">
+
+
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Edit</p>
+                <button class="delete" aria-label="close" onclick="closeModal()"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">url path</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="url path, support ant path style."
+                               name="url_path">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">http method</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="http_method">
+                                <option>GET</option>
+                                <option>POST</option>
+                                <option>PUT</option>
+                                <option>DELETE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">req body</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="only support json req body." name="req_body"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">res body</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="only support json res body." name="res_body"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">match method</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="match_method">
+                                <option>ALL</option>
+                                <option>ANY</option>
+                                <option>CUSTOM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">match rules</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="support python script." name="match_rules"></textarea>
+                    </div>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" class="button is-success">Save changes</button>
+                <button type="button" class="button" onclick="closeModal()">Cancel</button>
+            </footer>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mock-man UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="static/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/app.css">
+</head>
+<body>
+<div class="main">
+    <button type="button" class="button is-primary" onclick="openModal()">Add</button>
+    <button type="button" class="button is-danger">Delete</button>
+    <table class="table is-striped" style="width:1300px">
+        <thead>
+        <tr>
+            <th>url path</th>
+            <th>http method</th>
+            <th>req body</th>
+            <th>res body</th>
+            <th>match rules</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in req_items %}
+        <tr>
+            <td>{{ item.url_path }}</td>
+            <td>
+                <span class="tag">
+                    {{ item.http_method }}
+                </span>
+            </td>
+            <td>{{ item.req_body }}</td>
+            <td>{{ item.res_body }}</td>
+            <td>
+                {% if item.match_rules == 'ANY' or item.match_rules == 'ALL' %}
+                <span class="tag">
+                    {{ item.match_rules }}
+                </span>
+                {% else %}
+                {{ item.match_rules }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{% include 'edit_window.html' %}
+</body>
+</html>

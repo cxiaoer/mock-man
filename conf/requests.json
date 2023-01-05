@@ -1,0 +1,56 @@
+[
+  {
+    "url_path": "/helloworld",
+    "http_method": "GET",
+    "req_body": "{}"
+  },
+  {
+    "url_path": "/helloworld",
+    "http_method": "POST",
+    "req_body": "{\n    \"hello\":\"world\"\n}",
+    "res_body": "{\n  \"hello\": \"world5\",\n  \"user\": {\n    \"name\": \"cxiaoer\",\n    \"age\": 12\n  }\n}",
+    "match_rules": "req.hello == 'world'"
+  },
+  {
+    "url_path": "/helloworld2",
+    "http_method": "POST",
+    "req_body": "",
+    "res_body": "{\n    \"hello\":\"world5\"\n}",
+    "match_rules": "ANY"
+  },
+  {
+    "url_path": "/helloman/**",
+    "http_method": "POST",
+    "req_body": "",
+    "res_body": "{\n    \"hello\":\"world5\"\n}",
+    "match_rules": "ANY"
+  },
+  {
+    "url_path": "/arr-test",
+    "http_method": "POST",
+    "req_body": "",
+    "res_body": "{\n    \"hello\":\"hello array\"\n}",
+    "match_rules": "req[0] is not None"
+  },
+  {
+    "url_path": "/reg-test",
+    "http_method": "POST",
+    "req_body": "",
+    "res_body": "{\n    \"hello\":\"hello array\"\n}",
+    "match_rules": "'word' in req.name"
+  },
+  {
+    "url_path": "/mallsllll",
+    "http_method": "GET",
+    "req_body": "",
+    "res_body": "",
+    "match_rules": "ALL"
+  },
+  {
+    "url_path": "/xiagao",
+    "http_method": "GET",
+    "req_body": "{\"hello\":\"122\"}",
+    "res_body": "{\"hello\":\"122\"}",
+    "match_rules": "ANY"
+  }
+]
